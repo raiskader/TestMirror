@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - Configuration
     - LoginPanelUI
     - PlayFab.Networking.MirrorNetworkServer
+    - PlayFab.Networking.MirrorPlayfabAPI
     - QuickStart.GameList
     - QuickStart.Menu
     - QuickStart.PlayerScript
@@ -15,7 +16,6 @@ ScriptsOnlyBuild:
     Mirror.Components.dll:
     - Mirror.NetworkTransform
     Mirror.dll:
-    - Mirror.FallbackTransport
     - Mirror.NetworkIdentity
     - Mirror.NetworkStartPosition
     - Mirror.TelepathyTransport
@@ -163,8 +163,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1546}
     - Class: 114
-      Script: {instanceID: 1740}
-    - Class: 114
       Script: {instanceID: 1828}
     - Class: 114
       Script: {instanceID: 1834}
@@ -202,6 +200,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4264}
     - Class: 114
       Script: {instanceID: 4362}
+    - Class: 114
+      Script: {instanceID: 4406}
     - Class: 114
       Script: {instanceID: 4464}
     - Class: 114

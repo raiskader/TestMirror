@@ -56,22 +56,22 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameList.cs" />
-    <Compile Include="Assets\SceneReference.cs" />
-    <Compile Include="Assets\PlayerPrefsUtility.cs" />
-    <Compile Include="Assets\GUIDUtility.cs" />
-    <Compile Include="Assets\MirrorNetworkServer2Players.cs" />
-    <Compile Include="Assets\MirrorNetworkServer.cs" />
-    <Compile Include="Assets\Configuration.cs" />
-    <Compile Include="Assets\ClientStartup.cs" />
-    <Compile Include="Assets\LoginPanelUI.cs" />
-    <Compile Include="Assets\Menu.cs" />
-    <Compile Include="Assets\ServerStartup.cs" />
-    <Compile Include="Assets\SceneScript.cs" />
-    <Compile Include="Assets\TestControls.cs" />
-    <Compile Include="Assets\MirrorPlayfabAPI.cs" />
-    <Compile Include="Assets\PlayerScript.cs" />
-    <Compile Include="Assets\Weapon.cs" />
+    <Compile Include="Assets\Scripts\GameList.cs" />
+    <Compile Include="Assets\Scripts\SceneReference.cs" />
+    <Compile Include="Assets\Scripts\PlayerPrefsUtility.cs" />
+    <Compile Include="Assets\Scripts\GUIDUtility.cs" />
+    <Compile Include="Assets\Scripts\MirrorNetworkServer2Players.cs" />
+    <Compile Include="Assets\Scripts\MirrorNetworkServer.cs" />
+    <Compile Include="Assets\Scripts\Configuration.cs" />
+    <Compile Include="Assets\Scripts\ClientStartup.cs" />
+    <Compile Include="Assets\Scripts\LoginPanelUI.cs" />
+    <Compile Include="Assets\Scripts\Menu.cs" />
+    <Compile Include="Assets\Scripts\ServerStartup.cs" />
+    <Compile Include="Assets\Scripts\SceneScript.cs" />
+    <Compile Include="Assets\Scripts\TestControls.cs" />
+    <Compile Include="Assets\Scripts\MirrorPlayfabAPI.cs" />
+    <Compile Include="Assets\Scripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
@@ -793,10 +793,6 @@
     <ProjectReference Include="Mirror.Examples.Cloud.Pong.csproj">
       <Project>{AAB6C91F-F95E-710B-CAC8-56D6588F6BBE}</Project>
       <Name>Mirror.Examples.Cloud.Pong</Name>
-    </ProjectReference>
-    <ProjectReference Include="Example.csproj">
-      <Project>{B9B52698-E7C4-C7B2-1CBD-8874ECCF33A8}</Project>
-      <Name>Example</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
