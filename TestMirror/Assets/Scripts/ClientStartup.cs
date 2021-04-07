@@ -6,6 +6,7 @@ using System;
 using PlayFab.ClientModels;
 using PlayFab.MultiplayerModels;
 using Mirror;
+using kcp2k;
 
 public class ClientStartup : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class ClientStartup : MonoBehaviour
     public ServerStartup serverStartUp;
     public NetworkManager networkManager;
     public TelepathyTransport telepathyTransport;
-    public libuv2kTransport libuvTransport;
+    public KcpTransport kcpTransport;
 
     public void OnLoginUserButtonClick()
     {
@@ -89,16 +90,16 @@ public class ClientStartup : MonoBehaviour
         {
             networkManager.networkAddress = configuration.ipAddress;
             telepathyTransport.port = configuration.port;
-            if(libuvTransport != null)
-                libuvTransport.Port = configuration.port;
+            if(kcpTransport != null)
+                kcpTransport.Port = configuration.port;
         }
         else
         {
             Debug.Log("**** ADD THIS TO YOUR CONFIGURATION **** -- IP: " + response.IPV4Address + " Port: " + (ushort)response.Ports[0].Num);
             networkManager.networkAddress = response.IPV4Address;
             telepathyTransport.port = (ushort)response.Ports[0].Num;
-            if (libuvTransport != null)
-                libuvTransport.Port = (ushort)response.Ports[0].Num;
+            if (kcpTransport != null)
+                kcpTransport.Port = (ushort)response.Ports[0].Num;
         }
 
         networkManager.StartClient();

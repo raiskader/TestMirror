@@ -19,6 +19,7 @@ ScriptsOnlyBuild:
     - Mirror.NetworkIdentity
     - Mirror.NetworkStartPosition
     - Mirror.TelepathyTransport
+    - kcp2k.KcpTransport
     PlayFab.dll:
     - PlayFabSharedSettings
     PlayFabEditorExtensions.dll:
@@ -57,8 +58,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
-    libuv2kTransport.dll:
-    - Mirror.libuv2kTransport
   sceneClasses:
     Assets/Scenes/GameList.unity:
     - Class: 1
@@ -96,13 +95,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2664}
     - Class: 114
-      Script: {instanceID: 3154}
+      Script: {instanceID: 3152}
     - Class: 114
-      Script: {instanceID: 3464}
+      Script: {instanceID: 3462}
     - Class: 114
-      Script: {instanceID: 3890}
+      Script: {instanceID: 3888}
     - Class: 114
-      Script: {instanceID: 4208}
+      Script: {instanceID: 4206}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -161,6 +160,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1482}
     - Class: 114
+      Script: {instanceID: 1492}
+    - Class: 114
       Script: {instanceID: 1546}
     - Class: 114
       Script: {instanceID: 1828}
@@ -175,45 +176,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2664}
     - Class: 114
-      Script: {instanceID: 2976}
+      Script: {instanceID: 2974}
     - Class: 114
-      Script: {instanceID: 3154}
+      Script: {instanceID: 3152}
     - Class: 114
-      Script: {instanceID: 3416}
+      Script: {instanceID: 3414}
     - Class: 114
-      Script: {instanceID: 3464}
+      Script: {instanceID: 3462}
     - Class: 114
-      Script: {instanceID: 3506}
+      Script: {instanceID: 3504}
     - Class: 114
-      Script: {instanceID: 3546}
+      Script: {instanceID: 3544}
     - Class: 114
-      Script: {instanceID: 3674}
+      Script: {instanceID: 3672}
     - Class: 114
-      Script: {instanceID: 3702}
+      Script: {instanceID: 3700}
+    - Class: 114
+      Script: {instanceID: 3886}
     - Class: 114
       Script: {instanceID: 3888}
     - Class: 114
-      Script: {instanceID: 3890}
+      Script: {instanceID: 4206}
     - Class: 114
-      Script: {instanceID: 4208}
+      Script: {instanceID: 4262}
     - Class: 114
-      Script: {instanceID: 4264}
+      Script: {instanceID: 4360}
     - Class: 114
-      Script: {instanceID: 4362}
+      Script: {instanceID: 4404}
     - Class: 114
-      Script: {instanceID: 4406}
+      Script: {instanceID: 4462}
     - Class: 114
-      Script: {instanceID: 4464}
+      Script: {instanceID: 4476}
     - Class: 114
-      Script: {instanceID: 4478}
+      Script: {instanceID: 4638}
     - Class: 114
-      Script: {instanceID: 4642}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 4660}
-    - Class: 114
-      Script: {instanceID: 4670}
-    - Class: 114
-      Script: {instanceID: 4920}
+      Script: {instanceID: 4916}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -284,17 +283,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2702}
     - Class: 114
-      Script: {instanceID: 3154}
+      Script: {instanceID: 3152}
     - Class: 114
-      Script: {instanceID: 3464}
+      Script: {instanceID: 3462}
     - Class: 114
-      Script: {instanceID: 3890}
+      Script: {instanceID: 3888}
     - Class: 114
-      Script: {instanceID: 4208}
+      Script: {instanceID: 4206}
     - Class: 114
-      Script: {instanceID: 4266}
+      Script: {instanceID: 4264}
     - Class: 114
-      Script: {instanceID: 4642}
+      Script: {instanceID: 4638}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -361,17 +360,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2702}
     - Class: 114
-      Script: {instanceID: 3154}
+      Script: {instanceID: 3152}
     - Class: 114
-      Script: {instanceID: 3464}
+      Script: {instanceID: 3462}
     - Class: 114
-      Script: {instanceID: 3890}
+      Script: {instanceID: 3888}
     - Class: 114
-      Script: {instanceID: 4208}
+      Script: {instanceID: 4206}
     - Class: 114
-      Script: {instanceID: 4266}
+      Script: {instanceID: 4264}
     - Class: 114
-      Script: {instanceID: 4642}
+      Script: {instanceID: 4638}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -761,12 +760,6 @@ ScriptsOnlyBuild:
     className: NetworkStartPosition
   - hash:
       serializedVersion: 2
-      Hash: db7db9885fc747a2e6e9c0017c7e6974
-    assemblyName: Example.dll
-    namespaceName: libuv2k.Examples
-    className: TestServer
-  - hash:
-      serializedVersion: 2
       Hash: 7693a95a23894f08d3f3e6f3544a47c0
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.MultipleMatch
@@ -1013,7 +1006,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 0f216dd198265fb222e21e4fe3a482b9
+      Hash: 12a9a3ddaf40d4d7797a02244d107f86
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ClientStartup
@@ -1407,12 +1400,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMeshUI
-  - hash:
-      serializedVersion: 2
-      Hash: db7db9885fc747a2e6e9c0017c7e6974
-    assemblyName: Example.dll
-    namespaceName: libuv2k.Examples
-    className: TestClient
   - hash:
       serializedVersion: 2
       Hash: 426e5bd616852254b77531cd1a8e29b6
