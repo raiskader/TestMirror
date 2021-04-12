@@ -26,7 +26,7 @@ public class ServerStartup : MonoBehaviour
     {
         if (configuration.buildType == BuildType.LOCAL_SERVER)
         {
-            MirrorServer.StartServer();
+            MirrorServer.OnStartServer();
         }
     }
 
@@ -62,7 +62,7 @@ public class ServerStartup : MonoBehaviour
 
     private void OnServerActive()
     {
-        MirrorServer.StartServer();
+        MirrorServer.OnStartServer();
         Debug.Log("Server Started From Agent Activation");
     }
 
@@ -105,7 +105,7 @@ public class ServerStartup : MonoBehaviour
         Debug.Log("Server is shutting down");
         foreach (var conn in MirrorServer.Connections)
         {
-            conn.Connection.Send(CreateShutDownMessage());
+            conn.Connection.Send(new ShutdownMessage());
         }
         StartCoroutine(ShutdownServer());
     }
@@ -121,26 +121,10 @@ public class ServerStartup : MonoBehaviour
         Debug.LogFormat("Maintenance scheduled for: {0}", NextScheduledMaintenanceUtc.Value.ToLongDateString());
         foreach (var conn in MirrorServer.Connections)
         {
-            conn.Connection.Send(CreateMaintenanceMessage(NextScheduledMaintenanceUtc));
+            conn.Connection.Send(new MaintenanceMessage()
+            {
+                ScheduledMaintenanceUTC = (DateTime)NextScheduledMaintenanceUtc
+            });
         }
-    }
-
-    private ShutdownMessage CreateShutDownMessage()
-    {
-        ShutdownMessage shutdownMessage = new ShutdownMessage
-        {
-            message = "Server is Shutting Down"
-        };
-        return shutdownMessage;
-    }
-
-    private MaintenanceMessage CreateMaintenanceMessage(DateTime? NextScheduledMaintenanceUtc)
-    {
-        MaintenanceMessage maintenanceMessage = new MaintenanceMessage
-        {
-            message = "Server is Shutting Down for maintenance",
-            ScheduledMaintenanceUTC = (DateTime)NextScheduledMaintenanceUtc
-        };
-        return maintenanceMessage;
     }
 }

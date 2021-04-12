@@ -26,29 +26,17 @@ namespace PlayFab.Networking
 
             if (configuration.buildType == BuildType.REMOTE_SERVER)
             {
-                manager.onRecieveAuthenticate += RecieveAuthenticateHandler;
-                manager.onServerStarted += ServerStartedHandler;
-                manager.onServerStopped += ServerStoppedHandler;
+                manager.onServerStarted += StartServer;
+                manager.onServerStopped += OnApplicationQuit;
             }
         }
 
-        void RecieveAuthenticateHandler(NetworkConnection conn, string playFabID)
-        {
-            MirrorNetworkConnection connection = manager.Connections.Find(c => c.ConnectionId == conn.connectionId);
-            if (connection != null)
-            {
-                connection.PlayFabId = playFabID;
-                connection.IsAuthenticated = true;
-                manager.OnPlayerAdded.Invoke(playFabID);
-            }
-        }
-
-        void ServerStartedHandler()
+        void StartServer()
         {
             NetworkServer.Listen(GetComponent<KcpTransport>().Port);
         }
 
-        void ServerStoppedHandler()
+        void OnApplicationQuit()
         {
             NetworkServer.Shutdown();
         }

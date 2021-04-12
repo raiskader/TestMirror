@@ -37,11 +37,14 @@ ScriptsOnlyBuild:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
+    - TMPro.TMP_InputField
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshPro
     - TMPro.TextMeshProUGUI
+    Unity.Timeline.Editor.dll:
+    - TimelineProjectSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -58,6 +61,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
+    - UnityEngine.UI.RectMask2D
   sceneClasses:
     Assets/Scenes/GameList.unity:
     - Class: 1
@@ -164,6 +169,10 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1546}
     - Class: 114
+      Script: {instanceID: 1584}
+    - Class: 114
+      Script: {instanceID: 1668}
+    - Class: 114
       Script: {instanceID: 1828}
     - Class: 114
       Script: {instanceID: 1834}
@@ -199,6 +208,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4206}
     - Class: 114
       Script: {instanceID: 4262}
+    - Class: 114
+      Script: {instanceID: 4342}
     - Class: 114
       Script: {instanceID: 4360}
     - Class: 114
@@ -1024,7 +1035,7 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: ce9a78b04f5ea3db1e29a037eda3b1cc
+      Hash: c2fa6dee7a44e1e94221ef53fee18c2d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LoginPanelUI
@@ -1230,7 +1241,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 306f6c6830d6725abf0598650905dcd4
     assemblyName: Mirror.Components.dll
-    namespaceName: 
+    namespaceName: Mirror
     className: GUIConsole
   - hash:
       serializedVersion: 2
@@ -1610,4 +1621,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/GameList.unity
   - Assets/Scenes/MyScene.unity
   - Assets/Scenes/MyOtherScene.unity
-  playerPath: F:/GitHub/TestMirror/TestMirror/ServerBuildTest/TestMirror.exe
+  playerPath: F:/GitHub/TestMirror/TestMirror/BuildTest_Server_Remote/TestMirror.exe
